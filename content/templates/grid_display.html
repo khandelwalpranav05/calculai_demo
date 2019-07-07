@@ -7,9 +7,9 @@
 	<h1>Here are all the Images</h1>
 
 	{% for i in images %}
-		<h6>Scene kya hai!</h6>
-		<img src="{{ i.imagePath }}" width="400px"/>
-		<h6>{{i.ethnicity}}</h6>
+		<img src="{{ i.imagePath.url }}" width="400px"/>
+		<p> {{i.ethnicity}} </p>
+		<br>
 	{% endfor %}
 </body>
 </html>
