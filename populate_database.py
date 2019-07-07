@@ -7,15 +7,15 @@ django.setup()
 from content.models import ImageContent
 
 def add_image(ethnic,address):
-	address = address.split("/")[-1]
 	t = ImageContent.objects.create(enthnicity = ethnic,imagePath = address)
 	t.save()
 
 def populate(enthnicity):
-	directory = "/home/pranav/Django/calculai_demo/Data/" + enthnicity
+	media_dir = "/home/pranav/Django/calculai_demo/media/" 
+	directory = media_dir + enthnicity
 
 	for filename in os.listdir(directory):
-		add_image(enthnicity,os.path.join(directory,filename))
+		add_image(enthnicity,os.path.join(media_dir,filename))
 
 def all_topics():
 	topics = ['Asian','Black','Caucasian','Indian','Spanish']
@@ -24,4 +24,3 @@ def all_topics():
 		populate(topics[i])
 
 all_topics()
-
