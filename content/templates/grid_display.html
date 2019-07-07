@@ -7,7 +7,7 @@
 	<h1>Here are all the Images</h1>
 
 	{% for i in images %}
-		<img src="{{ i.imagePath.url }}" width="400px"/>
+		<a href="{% url 'content:detail_image' i.id %}" value = "{{i.id}}"><img src="{{ i.imagePath.url }}" width="400px"/></a>
 		<p> {{i.ethnicity}} </p>
 		<br>
 	{% endfor %}
