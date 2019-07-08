@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Choose your Ethnicity</h1>
+
+	<div>
+		<form action="{% url 'content:display_all' %}" method="POST">
+			{% csrf_token %}
+			<select name = "dropdown">
+				{% for i in images%}
+					<option value="{{ i.ethnicity }}">{{ i.ethnicity }}</option>
+				{% endfor %}
+			</select>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>

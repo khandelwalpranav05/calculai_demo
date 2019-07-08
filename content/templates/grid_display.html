@@ -3,13 +3,48 @@
 <head>
 	<title>Display</title>
 </head>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.column img {
+  margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
 <body>
 	<h1>Here are all the Images</h1>
 
 	{% for i in images %}
-		<a href="{% url 'content:detail_image' i.id %}" value = "{{i.id}}"><img src="{{ i.imagePath.url }}" width="400px"/></a>
-		<p> {{i.ethnicity}} </p>
-		<br>
+		<div class="grid padding">
+			<div class="row">
+				<div class="column">
+					<div class="row">
+						<a href="{% url 'content:detail_image' i.id %}" ><img src="{{ i.imagePath.url }}" width="350px"/></a>
+						<h3> {{i.ethnicity}} </h3>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
 	{% endfor %}
 </body>
 </html>
