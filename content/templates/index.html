@@ -8,7 +8,7 @@
 	{% block body_block %}
 	<h1>Choose Ethnicity</h1>
 
-	<div>
+	<div class = "form-group">
 		<form action="{% url 'content:display_all' %}" method="POST">
 			{% csrf_token %}
 			<select name = "dropdown">
