@@ -4,47 +4,33 @@
 	<title>Display</title>
 </head>
 <style>
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  font-family: Arial;
+
+.picture-grid{
+	display: grid;
+	/*grid-template-columns: repeat(auto-fill,minmax(240px,1fr));*/
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	justify-items:center;
+	grid-gap: 5px;
+	grid-row-gap:1px; 
 }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
+.grid-box img{
+	width: 100%;
 }
 
-.column img {
-  margin-top: 12px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 </style>
 <body>
 	<h1>Here are all the Images</h1>
-
-	{% for i in images %}
-		<div class="grid padding">
-			<div class="row">
-				<div class="column">
-					<div class="row">
+	<div class="container">
+		<div class="picture-grid">
+			{% for i in images %}
+					<div class="grid-box">
 						<a href="{% url 'content:detail_image' i.id %}" ><img src="{{ i.imagePath.url }}" width="350px"/></a>
 						<h3> {{i.ethnicity}} </h3>
 						<br>
 					</div>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
-	{% endfor %}
+	</div>
 </body>
 </html>

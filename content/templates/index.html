@@ -10,9 +10,11 @@
 		<form action="{% url 'content:display_all' %}" method="POST">
 			{% csrf_token %}
 			<select name = "dropdown">
-				{% for i in images%}
-					<option value="{{ i.ethnicity }}">{{ i.ethnicity }}</option>
-				{% endfor %}
+				<option value="Black">Black</option>
+				<option value="Indian">Indian</option>
+				<option value="Spanish">Spanish</option>
+				<option value="Caucasian">Caucasian</option>
+				<option value="Asian">Asian</option>
 			</select>
 			<input type="submit" value="Submit">
 		</form>
