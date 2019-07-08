@@ -3,9 +3,9 @@ from .models import ImageContent
 
 def grid_show(request):
 	if request.method =="POST":
-		a = request.POST['dropdown']
+		eth = request.POST['dropdown']
 
-	images = ImageContent.objects.filter(ethnicity = a)
+	images = ImageContent.objects.filter(ethnicity = eth)
 	return render(request,"grid_display.html",{"images":images})
 
 def detail_show(request,image_id):

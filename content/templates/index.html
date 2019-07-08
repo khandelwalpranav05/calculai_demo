@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<!-- <html>
 <head>
 	<title></title>
 </head>
-<body>
-	<h1>Choose your Ethnicity</h1>
+<body> -->
+{% extends 'base.html' %}
+	{% block body_block %}
+	<h1>Choose Ethnicity</h1>
 
 	<div>
 		<form action="{% url 'content:display_all' %}" method="POST">
@@ -19,5 +21,6 @@
 			<input type="submit" value="Submit">
 		</form>
 	</div>
-</body>
-</html>
+	{% endblock %}
+<!-- </body>
+</html> -->

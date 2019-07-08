@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<!-- <html>
 <head>
 	<title></title>
 </head>
-<body>
-	<h1>This is detail View</h1>
+<body> -->
+{% extends 'base.html' %}
+	{% block body_block %}
+	<h1>Detail</h1>
 	<div>
 		<img src="{{ image.imagePath.url }}" width="400px"/>
-		<h2>{{ image.ethnicity }}</h2>
+		<h2>Ethnicity : {{ image.ethnicity }}</h2>
 	</div>
-</body>
-</html>
+	{% endblock %}
+<!-- </body>
+</html> -->

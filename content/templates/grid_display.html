@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<!-- <html>
 <head>
 	<title>Display</title>
 </head>
+ -->
+{% extends 'base.html' %}
+	{% block body_block %}
+
 <style>
 
 .picture-grid{
@@ -20,17 +24,19 @@
 
 </style>
 <body>
-	<h1>Here are all the Images</h1>
+	<h1>Image Grid</h1>
 	<div class="container">
 		<div class="picture-grid">
 			{% for i in images %}
-					<div class="grid-box">
-						<a href="{% url 'content:detail_image' i.id %}" ><img src="{{ i.imagePath.url }}" width="350px"/></a>
-						<h3> {{i.ethnicity}} </h3>
-						<br>
-					</div>
+				<div class="grid-box">
+					<a href="{% url 'content:detail_image' i.id %}" ><img src="{{ i.imagePath.url }}" width="350px"/></a>
+					<h3> {{i.ethnicity}} </h3>
+				</div>
 			{% endfor %}
 		</div>
 	</div>
-</body>
-</html>
+
+	{% endblock %}
+
+<!-- </body>
+</html> -->
